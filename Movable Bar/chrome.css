@@ -1,0 +1,134 @@
+#urlbar-container {
+  cursor: grab !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  border-radius: 8px !important;
+  position: relative !important;
+}
+
+#urlbar-container:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+#urlbar-container:active {
+  cursor: grabbing !important;
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+#urlbar {
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+#urlbar:focus-within {
+  box-shadow: 0 0 0 2px var(--zen-colors-primary, #0066cc) !important;
+}
+
+#urlbar-container::before {
+  content: "⋮⋮" !important;
+  position: absolute !important;
+  left: -24px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 18px !important;
+  color: var(--zen-colors-tertiary, #999) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease, color 0.2s ease !important;
+  cursor: grab !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+#urlbar-container:hover::before {
+  opacity: 0.6 !important;
+}
+
+#urlbar-container:active::before {
+  opacity: 0.9 !important;
+  color: var(--zen-colors-primary, #0066cc) !important;
+}
+
+:root:not(:has(#theme-MovableBar)) #nav-bar,
+@media (-moz-bool-pref: "uc.movable-bar.position-top-center") {
+  #nav-bar {
+    justify-content: center !important;
+  }
+}
+
+@media (-moz-bool-pref: "uc.movable-bar.position-top-left") {
+  #nav-bar {
+    justify-content: flex-start !important;
+    padding-left: 20px !important;
+  }
+}
+
+@media (-moz-bool-pref: "uc.movable-bar.position-top-right") {
+  #nav-bar {
+    justify-content: flex-end !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (-moz-bool-pref: "uc.movable-bar.position-floating") {
+  #navigator-toolbox {
+    position: relative !important;
+  }
+
+  #nav-bar {
+    position: absolute !important;
+    top: 60px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    max-width: 700px !important;
+    background: var(--zen-dialog-background, rgba(255, 255, 255, 0.95)) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
+    padding: 12px 16px !important;
+    z-index: 1000 !important;
+    -moz-window-dragging: no-drag !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+
+  #urlbar-container::before {
+    left: -20px !important;
+  }
+}
+
+@media (-moz-bool-pref: "uc.movable-bar.position-bottom") {
+  #navigator-toolbox {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+
+  #nav-bar {
+    justify-content: center !important;
+    border-top: 1px solid var(--zen-colors-border) !important;
+    border-bottom: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  @media (-moz-bool-pref: "uc.movable-bar.position-floating") {
+    #nav-bar {
+      width: 90% !important;
+      max-width: 90% !important;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #urlbar-container,
+  #urlbar-container::before,
+  #urlbar {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  #urlbar-container:hover {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "property": "uc.movable-bar.position-top-center",
+    "label": "Position: Top Center (Default)",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "uc.movable-bar.position-top-left",
+    "label": "Position: Top Left",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "uc.movable-bar.position-top-right",
+    "label": "Position: Top Right",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "uc.movable-bar.position-floating",
+    "label": "Position: Floating (Detached)",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "uc.movable-bar.position-bottom",
+    "label": "Position: Bottom",
+    "type": "checkbox",
+    "defaultValue": false
+  }
+]
