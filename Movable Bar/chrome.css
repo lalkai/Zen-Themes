@@ -50,7 +50,10 @@
   color: var(--zen-colors-primary, #0066cc) !important;
 }
 
-:root:not(:has(#theme-MovableBar)) #nav-bar,
+:root:not(:has(#theme-MovableBar)) #nav-bar {
+  justify-content: center !important;
+}
+
 @media (-moz-bool-pref: "uc.movable-bar.position-top-center") {
   #nav-bar {
     justify-content: center !important;
